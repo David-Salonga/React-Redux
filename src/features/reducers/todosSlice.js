@@ -26,11 +26,15 @@ const todoSlice = createSlice({
                 
             });
         },
+        ToggleToDo(state, action){
+            const todo = state.entities[action.payload]
+            todo.done = !todo.done;
+        },
         
     },
 });
 
-export const {AddToDo} = todoSlice.actions;
+export const {AddToDo, ToggleToDo} = todoSlice.actions;
 
 export const { selectIds: selectTodosId, selectById: selectTodoById } = todoAdapter.getSelectors((state) => state.todoList);
 
