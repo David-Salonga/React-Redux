@@ -30,8 +30,8 @@ const todoSlice = createSlice({
             const todo = state.entities[action.payload]
             todo.done = !todo.done;
         },
-        DeleteToDo(state, {payload}){
-           const {id} = todoAdapter.removeOne(state, payload);
+        DeleteToDo(state, action){
+           todoAdapter.removeOne(state, action.payload);
         },
     },
 });
