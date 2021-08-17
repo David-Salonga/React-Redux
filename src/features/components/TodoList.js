@@ -4,10 +4,13 @@ import TodoGroup from './TodoGroup'
 
 function TodoList() {
     return (
-        <div>
-            <h1>Todo List</h1>
-            <TodoGroup/>
-            <TodoForm/>
+       
+        <div class="card marginLeft marginRight marginTop">
+        <h5 class="card-header">Todo List</h5>
+        <div class="card-body">
+        <TodoGroup/>
+        <TodoForm/>
+        </div>
         </div>
     )
 }

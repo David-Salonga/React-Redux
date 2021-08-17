@@ -9,9 +9,15 @@ function ToDoItem(props) {
     const todo = useSelector((state) => selectTodoById(state, id));
 
     return (
-        <div>
-            {todo.text}
+        <div class="alert alert-danger">
+            {todo.text} 
+            <button type="button" class="btn btn-link-danger btnRight btn-sm" data-dismiss="alert" aria-label="Close" al>
+            <span aria-hidden="true">&times;</span>
+        </button>
         </div>
+
+
+        
     )
 }
 
