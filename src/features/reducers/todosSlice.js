@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, isAsyncThunkAction } from "@reduxjs/toolkit";
 import { createEntityAdapter } from "@reduxjs/toolkit";
 import {v4 as uuid } from "uuid";
 
@@ -30,11 +30,13 @@ const todoSlice = createSlice({
             const todo = state.entities[action.payload]
             todo.done = !todo.done;
         },
-        
+        DeleteToDo(state, {payload}){
+           const {id} = todoAdapter.removeOne(state, payload);
+        },
     },
 });
 
-export const {AddToDo, ToggleToDo} = todoSlice.actions;
+export const {AddToDo, ToggleToDo, DeleteToDo} = todoSlice.actions;
 
 export const { selectIds: selectTodosId, selectById: selectTodoById } = todoAdapter.getSelectors((state) => state.todoList);
 
