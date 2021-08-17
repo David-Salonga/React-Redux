@@ -1,5 +1,5 @@
 import React from 'react';
-import { selectTodoById , selectTodosId, ToggleToDo} from '../reducers/todosSlice';
+import { selectTodoById , selectTodosId, ToggleToDo, DeleteToDo} from '../reducers/todosSlice';
 import { useSelector } from "react-redux";
 import {useDispatch} from 'react-redux';
 function ToDoItem(props) {
@@ -12,17 +12,19 @@ function ToDoItem(props) {
         dispatch(ToggleToDo(props.id));
     }
 
+    function deleteClick(event){
+        event.stopPropagation();
+        dispatch(DeleteToDo(props.id));
+    }
+
     const todoStatus = todo.done ? "done" : "";
     return (
         <div className={`alert alert-danger ${todoStatus}`} onClick={handleClick}>
             {todo.text} 
-            <button type="button" className="btn btn-link-danger btnRight btn-sm">
+            <button type="button" className="btn btn-link-danger btnRight btn-sm" onClick={deleteClick}>
             <span aria-hidden="true">&times;</span>
         </button>
         </div>
-
-
-        
     )
 }
 
