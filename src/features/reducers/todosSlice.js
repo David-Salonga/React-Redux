@@ -8,7 +8,7 @@ const initialState = todoAdapter.getInitialState({
     entities: {
         1: {
             id: "1",
-            text: "todo example 1",
+            text: "Finish Homework",
             done: false,
         },
     },
