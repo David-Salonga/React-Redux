@@ -1,5 +1,5 @@
 import React from 'react';
-import { selectTodoById , selectTodosId, ToggleToDo, DeleteToDo} from '../reducers/todosSlice';
+import { selectTodoById, ToggleToDo, DeleteToDo} from '../reducers/todosSlice';
 import { useSelector } from "react-redux";
 import {useDispatch} from 'react-redux';
 function ToDoItem(props) {

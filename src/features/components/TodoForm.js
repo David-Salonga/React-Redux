@@ -6,7 +6,7 @@ import {useDispatch} from 'react-redux';
 
 function TodoForm() {
 
-    const [text, setText] = useState("");
+    const [text, setText] = useState('');
     const dispatch = useDispatch();
 
     function handlerChange(event){
@@ -25,9 +25,6 @@ function TodoForm() {
         <button className="btn btn-outline-success" type="button" onClick={handlerAdd}>Add</button>
         </div>
         </div>
-
-        
-
     )
 }
 
