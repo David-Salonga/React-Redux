@@ -1,3 +1,7 @@
+body{
+    background-color: #607D8B;
+}
+
 .todoForm{
     margin-top: 200px;
 }
@@ -29,3 +33,4 @@
 .head{
     text-align: left;
 }
+
