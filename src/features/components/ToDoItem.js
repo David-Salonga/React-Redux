@@ -32,11 +32,13 @@ function ToDoItem(props) {
     return (
 
         <div className={`alert alert-light ${todoStatus} text `} onClick={handleClick}>
+            <p>
             <h5 className="animate__bounceIn">{todo.id}.) {todo.text} 
             <button type="button" className="btn btn-link-danger btnRight" onClick={deleteClick}>
             <span aria-hidden="true"><i className="bi bi-trash2"></i></span>
             </button>
             </h5>
+                </p>
             <hr/>
         </div>
     )

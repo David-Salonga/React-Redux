@@ -59,3 +59,7 @@ span:hover {
 .navbar-nav .nav-item:hover .nav-link {
     color: pink;
 }
+
+p:hover{
+    background-color: whitesmoke;
+}
