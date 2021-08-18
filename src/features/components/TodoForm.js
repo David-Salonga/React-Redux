@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import "../../styles/style.css";
 import {AddToDo} from "../reducers/todosSlice";
 import {useDispatch} from 'react-redux';
+import { createTodo } from '../api/todos';
 
 
 function TodoForm() {
@@ -13,19 +14,23 @@ function TodoForm() {
         setText(event.target.value);
     }
 
+    
     function handlerAdd(){
-        dispatch(AddToDo(text));
-        setText("");
+
+        createTodo(text).then((response) => {
+            dispatch(AddToDo(response.data));
+        },)
+        setText("");    
     }
 
     return (
         <div className="input-group mb-3 todoForm">
         <input type="text" className="form-control" placeholder="Add To Do Item" value={text} onChange={handlerChange}/>
-        <div className="input-group-append">
+        <div className="input-group-append">    
         <button className="btn btn-outline-success" type="button" onClick={handlerAdd}>Add</button>
         </div>
         </div>
     )
 }
 
-export default TodoForm
+export default TodoForm;
