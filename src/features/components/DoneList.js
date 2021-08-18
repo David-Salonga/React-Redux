@@ -12,7 +12,7 @@ function DoneList() {
         <div>
         <div className="card marginLeft marginRight marginTop text">
         <h2 className="card-header head">Done List</h2>
-        <div className="card-body">
+        <div className="card-body scrollable">
             {
                 todoDone.map((doneTodo) => (
                     <ToDoItem key={doneTodo.id} id={doneTodo.id}/>

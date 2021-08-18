@@ -18,7 +18,6 @@ function TodoList() {
     }, [dispatch])
 
     return (
-       
         <div className="card marginLeft marginRight marginTop text">
         <h2 className="card-header head">Todo List</h2>
         <div className="card-body">
