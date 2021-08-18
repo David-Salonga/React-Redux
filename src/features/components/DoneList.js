@@ -10,8 +10,8 @@ function DoneList() {
     
     return (
         <div>
-        <div className="card marginLeft marginRight marginTop">
-        <h5 className="card-header head">Done List</h5>
+        <div className="card marginLeft marginRight marginTop text">
+        <h2 className="card-header head">Done List</h2>
         <div className="card-body">
             {
                 todoDone.map((doneTodo) => (

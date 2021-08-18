@@ -24,8 +24,8 @@ function TodoForm() {
     }
 
     return (
-        <div className="input-group mb-3 todoForm">
-        <input type="text" className="form-control" placeholder="Add To Do Item" value={text} onChange={handlerChange}/>
+        <div className="input-group mb-3 todoForm text">
+        <input type="text" className="form-control" placeholder="Add To Do Item..." value={text} onChange={handlerChange}/>
         <div className="input-group-append">    
         <button className="btn btn-outline-success" type="button" onClick={handlerAdd}>Add</button>
         </div>

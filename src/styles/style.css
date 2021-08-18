@@ -1,9 +1,6 @@
 body{
     background-color: #607D8B;
-}
-
-.todoForm{
-    margin-top: 200px;
+    
 }
 
 .marginLeft{
@@ -22,15 +19,43 @@ body{
     float: right;
 }
 
-.alert.alert-danger.done{
-    color: #0f5132;
-    background-color: #d1e7dd;
-    border-color: #badbcc;
-    text-decoration: line-through;
-    font-style: italic;
+h5.btnRight{
+    display: inline-block;
 }
+
+.alert.alert-light.done{
+    color: #DA4453;
+    text-decoration: line-through;
+
+}
+
 
 .head{
     text-align: left;
 }
 
+.text{
+    font-family: 'Josefin Slab', serif;
+}
+
+span:hover {
+    background-color: #ad5389;
+  }
+
+.navbar-custom {
+    background: -webkit-linear-gradient(to right, #89216B, #DA4453); 
+    background: linear-gradient(to right, #89216B, #DA4453); 
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: #DA4453;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #DA4453;
+}
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-item:hover .nav-link {
+    color: pink;
+}

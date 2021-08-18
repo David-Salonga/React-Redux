@@ -18,11 +18,11 @@ function TodoList() {
 
     return (
        
-        <div className="card marginLeft marginRight marginTop">
-        <h5 className="card-header head">Todo List</h5>
+        <div className="card marginLeft marginRight marginTop text">
+        <h2 className="card-header head">Todo List</h2>
         <div className="card-body">
-        <TodoGroup/>
         <TodoForm/>
+        <TodoGroup/>
         </div>
         </div>
     )

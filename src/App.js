@@ -9,21 +9,15 @@ import { BrowserRouter as Router,  Switch,  Route,  Link } from "react-router-do
 function App() {
   return (
     <Router>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Todo</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              {/* <Link to="/">Home</Link> */}
-              <a class="nav-link active"  href="/">Home</a>
+    <nav className="navbar navbar-expand-lg navbar-custom">
+      <div className="container-fluid">
+        <div className="collapse navbar-collapse " id="navbarNav">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <Link className="nav-link active navbar-text" to="/">Home</Link>
             </li>
-            <li class="nav-item">
-              {/* <Link to="/done">Done List</Link> */}
-              <a class="nav-link active"  href="/done">Done List</a>
+            <li className="nav-item">
+              <Link className="nav-link active navbar-text" to="/done">Done List</Link>
             </li>
           </ul>
         </div>
