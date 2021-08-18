@@ -25,8 +25,8 @@ function ToDoItem(props) {
     const todoStatus = todo.done ? "done" : "";
     return (
 
-        <div className={`alert alert-light ${todoStatus} text`} onClick={handleClick}>
-            <h5>{todo.id}.) {todo.text} 
+        <div className={`alert alert-light ${todoStatus} text `} onClick={handleClick}>
+            <h5 className="animate__bounceIn">{todo.id}.) {todo.text} 
             <button type="button" className="btn btn-link-danger btnRight btnRight" onClick={deleteClick}>
             <span aria-hidden="true"><i className="bi bi-trash2"></i></span>
             </button>

@@ -53,7 +53,7 @@ span:hover {
 }
 
 .navbar-nav .nav-item .nav-link {
-    color: #DA4453;
+    color: white;
 }
 .navbar-nav .nav-item.active .nav-link,
 .navbar-nav .nav-item:hover .nav-link {

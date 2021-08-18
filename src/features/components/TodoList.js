@@ -5,6 +5,7 @@ import TodoGroup from './TodoGroup'
 import { useEffect } from 'react'
 import {useDispatch} from 'react-redux';
 import { AddTodos } from '../reducers/todosSlice';
+import "animate.css"
 
 function TodoList() {
 

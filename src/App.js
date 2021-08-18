@@ -4,6 +4,7 @@ import TodoList from './features/components/TodoList';
 import DoneList from './features/components/DoneList';
 import NotFound from './features/NotFoundPage/NotFound';
 import { BrowserRouter as Router,  Switch,  Route,  Link } from "react-router-dom";
+import "animate.css";
 
 
 function App() {
