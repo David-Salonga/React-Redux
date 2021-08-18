@@ -6,7 +6,7 @@ function TodoList() {
     return (
        
         <div className="card marginLeft marginRight marginTop">
-        <h5 className="card-header">Todo List</h5>
+        <h5 className="card-header head">Todo List</h5>
         <div className="card-body">
         <TodoGroup/>
         <TodoForm/>
