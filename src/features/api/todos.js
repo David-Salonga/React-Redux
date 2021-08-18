@@ -12,3 +12,7 @@ export const updateTodo = (id, done) => {
     return api.put(`/todos/${id}`, {done}
 )}
 
+
+export const deleteTodo = (id) => {
+    return api.delete(`/todos/${id}`);
+}

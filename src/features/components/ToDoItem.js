@@ -2,7 +2,7 @@ import React from 'react';
 import { selectTodoById, ToggleToDo, DeleteToDo} from '../reducers/todosSlice';
 import { useSelector } from "react-redux";
 import {useDispatch} from 'react-redux';
-import { updateTodo } from '../api/todos';
+import { updateTodo, deleteTodo } from '../api/todos';
 function ToDoItem(props) {
 
 
@@ -19,7 +19,13 @@ function ToDoItem(props) {
 
     function deleteClick(event){
         event.stopPropagation();
-        dispatch(DeleteToDo(props.id));
+        deleteTodo(props.id).then((response) => {
+            console.log(props.id,response.data);  
+            dispatch(DeleteToDo(props.id, response.data));
+        },)
+
+       
+        // dispatch(DeleteToDo(props.id));
     }
 
     const todoStatus = todo.done ? "done" : "";
@@ -27,7 +33,7 @@ function ToDoItem(props) {
 
         <div className={`alert alert-light ${todoStatus} text `} onClick={handleClick}>
             <h5 className="animate__bounceIn">{todo.id}.) {todo.text} 
-            <button type="button" className="btn btn-link-danger btnRight btnRight" onClick={deleteClick}>
+            <button type="button" className="btn btn-link-danger btnRight" onClick={deleteClick}>
             <span aria-hidden="true"><i className="bi bi-trash2"></i></span>
             </button>
             </h5>
