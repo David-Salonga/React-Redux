@@ -18,7 +18,7 @@ function App() {
               <Link className="nav-link active navbar-text" to="/">Home</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active navbar-text" to="/done">Done List</Link>
+              <Link className="nav-link navbar-text" to="/done">Done List</Link>
             </li>
           </ul>
         </div>

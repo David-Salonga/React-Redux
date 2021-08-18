@@ -63,3 +63,9 @@ span:hover {
 p:hover{
     background-color: whitesmoke;
 }
+
+.scrollable{
+    overflow: auto;
+    position:relative;
+    height: 500px;
+}

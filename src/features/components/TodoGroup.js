@@ -9,7 +9,7 @@ function TodoGroup() {
     const todoIds = useSelector(selectTodosId);
 
     return (
-        <div    >
+        <div className="scrollable" >
             {todoIds.map((id) => (
                 <ToDoItem key={id} id={id}/>    
             ))}
