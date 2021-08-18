@@ -2,6 +2,7 @@ import React from 'react';
 import { selectTodoById, ToggleToDo, DeleteToDo} from '../reducers/todosSlice';
 import { useSelector } from "react-redux";
 import {useDispatch} from 'react-redux';
+import { updateTodo } from '../api/todos';
 function ToDoItem(props) {
 
 
@@ -9,7 +10,11 @@ function ToDoItem(props) {
     const dispatch = useDispatch();
 
     function handleClick(){
-        dispatch(ToggleToDo(props.id));
+        updateTodo(props.id, {done: !todo.done}).then((response) => {
+            // console.log(response.data);  
+            dispatch(ToggleToDo(props.id, response.data));
+        },)
+       
     }
 
     function deleteClick(event){
@@ -20,11 +25,13 @@ function ToDoItem(props) {
     const todoStatus = todo.done ? "done" : "";
     return (
 
-        <div className={`alert alert-danger ${todoStatus}`} onClick={handleClick}>
-            {todo.text} 
-            <button type="button" className="btn btn-link-danger btnRight btn-sm" onClick={deleteClick}>
-            <span aria-hidden="true">&times;</span>
-            </button>          
+        <div className={`alert alert-light ${todoStatus} text`} onClick={handleClick}>
+            <h5>{todo.id}.) {todo.text} 
+            <button type="button" className="btn btn-link-danger btnRight btnRight" onClick={deleteClick}>
+            <span aria-hidden="true"><i className="bi bi-trash2"></i></span>
+            </button>
+            </h5>
+            <hr/>
         </div>
     )
 }
