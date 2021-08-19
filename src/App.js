@@ -7,6 +7,7 @@ import { BrowserRouter as Router,  Switch,  Route,  Link } from "react-router-do
 import "animate.css";
 
 
+
 function App() {
   return (
     <Router>

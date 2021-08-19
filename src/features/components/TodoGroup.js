@@ -13,7 +13,6 @@ function TodoGroup() {
             {todoIds.map((id) => (
                 <ToDoItem key={id} id={id}/>    
             ))}
-           
         </div>
     )
 }

@@ -18,7 +18,7 @@ function TodoList() {
     }, [dispatch])
 
     return (
-        <div className="card marginLeft marginRight marginTop text">
+        <div className="card marginLeft marginRight marginTop text animate__animated animate__fadeIn ">
         <h2 className="card-header head">Todo List</h2>
         <div className="card-body">
         <TodoForm/>

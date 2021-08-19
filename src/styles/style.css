@@ -29,6 +29,10 @@ h5.btnRight{
 
 }
 
+.btn.btn-link-danger.btnRight.done{
+    visibility: hidden;
+}
+
 
 .head{
     text-align: left;
@@ -38,9 +42,9 @@ h5.btnRight{
     font-family: 'Josefin Slab', serif;
 }
 
-span:hover {
+/* span:hover {
     background-color: #ad5389;
-  }
+  } */
 
 .navbar-custom {
     background: -webkit-linear-gradient(to right, #89216B, #DA4453); 
@@ -68,4 +72,19 @@ p:hover{
     overflow: auto;
     position:relative;
     height: 500px;
+}
+
+.marginNotFound{
+    margin-top: 20%;
+    color: white;
+}
+
+.modal-backdrop {
+    display: none;
+    z-index: 1040 !important;
+}
+
+.modal-content {
+    margin: 2px auto;
+    z-index: 1100 !important;
 }

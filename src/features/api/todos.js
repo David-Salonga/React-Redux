@@ -9,10 +9,14 @@ export const createTodo = (text) => {
 }
 
 export const updateTodo = (id, done) => {
-    return api.put(`/todos/${id}`, {done}
+    return api.put(`/todos/${id}`, done
 )}
 
 
 export const deleteTodo = (id) => {
     return api.delete(`/todos/${id}`);
+}
+
+export const editTodo = (id, text) => {
+    return api.put(`/todos/${id}`, text);
 }
