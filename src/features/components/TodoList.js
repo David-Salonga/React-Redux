@@ -9,13 +9,7 @@ import "animate.css"
 
 function TodoList() {
 
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-       getTodos().then((response) => {
-           dispatch(AddTodos(response.data));
-       })
-    }, [dispatch])
+    
 
     return (
         <div className="card marginLeft marginRight marginTop text animate__animated animate__fadeIn ">

@@ -25,8 +25,9 @@ const todoSlice = createSlice({
         EditTodo(state, action){
             todoAdapter.updateOne(state, {
                 id: action.payload.id,
-                changes: action.payload.text,
+                changes: action.payload.updateTodo,
             })
+            return state;
         },
     },  
 });

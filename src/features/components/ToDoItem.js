@@ -2,10 +2,11 @@ import React from 'react';
 import { selectTodoById, ToggleToDo, DeleteToDo, EditTodo} from '../reducers/todosSlice';
 import { useSelector } from "react-redux";
 import {useDispatch} from 'react-redux';
+
 import { updateTodo, deleteTodo, editTodo } from '../api/todos';
 import "bootstrap/dist/css/bootstrap.css";
 import { useState } from 'react';
-import {Button, Modal, Form } from 'react-bootstrap'
+import {Button, Modal, Form, InputGroup } from 'react-bootstrap'
 
 
 function ToDoItem(props) {
@@ -21,16 +22,17 @@ function ToDoItem(props) {
 
     const handleClose = () => {
 
-        editTodo(props.id, {text: text}).then((response) => {
-            dispatch(EditTodo(response.data));
+        updateTodo(props.id, {text: text, done: todo.done}).then((response) => {
+            dispatch(updateTodo(props.id, response.data));
         },)
         setShow(false);
     }
+    
     const handleShow = () => setShow(true);
 
 
     function handleClick(){
-        updateTodo(props.id, {done: !todo.done}).then((response) => { 
+        updateTodo(props.id, {text: todo.text, done: !todo.done}).then((response) => { 
             dispatch(ToggleToDo(props.id, response.data));
         },)
     }
@@ -73,7 +75,7 @@ function ToDoItem(props) {
                          <Modal.Title>Editing Todo#{todo.id}</Modal.Title>
                     </Modal.Header>
                             <Modal.Body>
-                                <Form.Control as="textarea" id="text-area" defaultValue={todo.text} onChange={handleChange} />
+                                <Form.Control as="textarea" id="text-area" placeholder={todo.text} onChange={handleChange} />
                             </Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" onClick={handleClosed}>Close</Button>

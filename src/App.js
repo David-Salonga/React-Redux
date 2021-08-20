@@ -5,11 +5,25 @@ import DoneList from './features/components/DoneList';
 import NotFound from './features/NotFoundPage/NotFound';
 import { BrowserRouter as Router,  Switch,  Route,  Link } from "react-router-dom";
 import "animate.css";
+import { getTodos } from './features/api/todos'
+import { AddTodos } from './features/reducers/todosSlice';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 
 
 
 function App() {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+      getTodos().then((response) => {
+          dispatch(AddTodos(response.data));
+      })
+   }, [dispatch])
+
   return (
+
     <Router>
     <nav className="navbar navbar-expand-lg navbar-custom">
       <div className="container-fluid">
