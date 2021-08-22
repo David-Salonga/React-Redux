@@ -22,17 +22,17 @@ function ToDoItem(props) {
 
     const handleClose = () => {
 
-        updateTodo(props.id, {text: text, done: todo.done}).then((response) => {
-            dispatch(updateTodo(props.id, response.data));
+        editTodo(props.id, {text: text}).then((response) => {
+            dispatch(EditTodo(response.data));
         },)
         setShow(false);
+        window.location.reload();
     }
-    
     const handleShow = () => setShow(true);
 
 
     function handleClick(){
-        updateTodo(props.id, {text: todo.text, done: !todo.done}).then((response) => { 
+        updateTodo(props.id, {done: !todo.done}).then((response) => { 
             dispatch(ToggleToDo(props.id, response.data));
         },)
     }
